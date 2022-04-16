@@ -1,0 +1,82 @@
+.bottom_row_padding{
+    padding-bottom: 10px;
+}
+.top_padding{
+    padding-top: 30px;
+}
+.center{
+    text-align: center;
+}
+.right{
+    text-align: right;
+}
+#body{
+    margin: 0%;
+}
+.padright{
+    margin-left: 52%;
+}
+.pad{
+    margin-left: 10px;
+    margin-right: 10px
+}
+#grad {
+    background-image: linear-gradient(to right, rgb(223, 82, 43) ,rgb(231, 99, 22), rgb(237, 154, 45));
+    margin: 0%;
+}
+.homepage{
+    font-size: 70px;
+    text-align: center;
+    color: white;
+}
+.drinkborder{
+    border: 3px;
+}
+.whiteback{
+    background-color: white;
+    position:fixed;
+}
+.container-fluid{
+    margin:0%;
+ }
+ .row-full{
+    width: 100vw;
+    position: relative;
+    left: -165px;
+    bottom: -100px;
+   }
+.indent{
+    text-align: center;
+    text-indent: 10cm;
+}
+.padding{
+    padding: 100px;
+    column-fill: auto;
+}
+.head{
+    font-size: 20px;
+    text-align: center;
+}
+.bigbutton{
+    padding:20px;
+}
+.border{
+    border-right: 2px black solid;
+    padding: 100px;
+}
+.tiny{
+    font-size: 15px;
+}
+.pad{
+    padding-bottom: 10px;
+}
+.heading {
+    font-size: 40px;
+    color: white;
+}
+.white-text {
+    color: white;
+}
+.medium {
+    font-size: 28px;
+}
