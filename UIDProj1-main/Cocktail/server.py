@@ -4,14 +4,14 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 drinks = {
-    "1" :{
+    "tequilasunrise" :{
         "id": "tequilasunrise",
         "title": "Tequila Sunrise",
         "video": "https://www.youtube.com/embed/_8gXKNqU9Mc",
         "ingredients": ["1 1/2 ounces of Tequila", "3/4 cup Orange juice", "3/4 ounces Grenadine", "1 Maraschino cherry"],
         "images": ["https://thumbs.dreamstime.com/b/bottle-mexican-tequila-white-background-stock-image-150427683.jpg", "https://assets.sainsburys-groceries.co.uk/gol/7736185/1/640x640.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROTiRh3FUZAb119bd88bOeZPjlZGKjLYxaJC3SwCA5rrp9PhsW0ghqAafQcgak-dmZL-c&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYd5eI92Lat-g-0L6OVMJ0jhZFUPIGNDZ0lA&usqp=CAU"]
     },
-    "2": {
+    "ginandtonic": {
         "id": "ginandtonic",
         "title": "Gin and Tonic",
         "video": "https://cdn.jwplayer.com/videos/aOvVQdyT-tXzwfO7V.mp4",
@@ -19,7 +19,7 @@ drinks = {
         "images": ["https://www.thespruceeats.com/thmb/WsIZugwpzqLynmkB4ZqGrfcE_Og=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-and-tonic-recipe-759300-hero-01-aa12e6504f944c54b8b9c589cc1d0ac6.jpg"]
 
     },
-    "3": {
+    "margarita": {
         "id": "margarita",
         "title": "Margarita",
         "video": "https://www.youtube.com/embed/6F6LdutFKyM",
@@ -27,6 +27,7 @@ drinks = {
         "images": [""]
     }
 }
+gamepictures = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK1CBfWklpfQLb7I6B0z0JLV1Qbckgu4zUsQ&usqp=CAU"]
 quizzes = {
     "1" : {
         "1": "1",
@@ -42,12 +43,17 @@ quizzes = {
 def homepage():
     return render_template('homepage.html')
 
-@app.route('/howtovid/<id>')
-def howto(id):
+@app.route('/howtovid/<drinkname>')
+def howto(drinkname):
     global drinks
-    drink = drinks[id]
+    drink = drinks[drinkname]
     return render_template('howto.html', drink = drink)
 
+@app.route('/cocktailgame/<drinkname>')
+def cocktailgame(drinkname):
+    global drinks
+    drink = drinks[drinkname]
+    return render_template('cocktailgame.html', drink = drink)
 @app.route('/quiz/<id>')
 def quiz(id):
     global quizzes
