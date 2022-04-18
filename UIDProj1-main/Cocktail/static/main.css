@@ -33,6 +33,33 @@
     text-align: center;
     color: white;
 }
+.left{
+    margin-left: -135px;
+}
+.labelpad{
+    padding-top: 10px;
+    font-family: Oswald;
+    font-size: 30px;
+    color: white;
+}
+.grenadine{
+    width: 50px;
+    height: 180px;
+    margin-left: 90px;
+    margin-top: 70px;
+}
+.lime{
+    width: 50px;
+    height: 160px;
+    margin-left: -80px;
+    margin-top: 70px;
+}
+.orange{
+    width: 80px;
+    height: 180px;
+    margin-left: -250px;
+    margin-top: 70px;
+}
 .gamepage{
     font-size: 50px;
     text-align: center;
