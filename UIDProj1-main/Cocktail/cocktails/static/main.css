@@ -91,3 +91,9 @@
 .medium {
     font-size: 28px;
 }
+#videos{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    z-index: -100;
+}
