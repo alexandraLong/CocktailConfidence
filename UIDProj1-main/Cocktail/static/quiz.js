@@ -21,7 +21,39 @@ $(document).ready(function() {
         $("#submit").click(function() {
             $("#submit_button").css('visibility', 'hidden')
             let button = '<button id = "next" class = "center" > Next </button>'
+            console.log(document.getElementById('1').checked)
             $("#next_button").append(button)
+            let data_to_save = {"1": document.getElementById('1').checked,
+                                "2": document.getElementById('2').checked,
+                                "3": document.getElementById('3').checked,
+                                "4": document.getElementById('4').checked,
+                                "5": document.getElementById('5').checked,
+                                "qno": qno,
+                                "quiz": quiz}
+            console.log(data_to_save)
+            $.ajax({
+                type: "POST",
+                url: "check_answer",                
+                dataType : "json",
+                contentType: "application/json; charset=utf-8",
+                data : JSON.stringify(data_to_save),
+                success: function(result){
+                    let correct = result["correct"]
+                    alert(correct)
+                    if(correct){
+                        $("#feedback").value("Correct!")
+                    }
+                    else{
+                        $("#feedback").value("Incorrect!")
+                    }
+                },
+                error: function(request, status, error){
+                    console.log("Error");
+                    console.log(request)
+                    console.log(status)
+                    console.log(error)
+                }
+            })
             $("#next").click(function(){
                 window.location.replace("http://127.0.0.1:5000/quiz/"+quiz.id+"/"+next);
             })
