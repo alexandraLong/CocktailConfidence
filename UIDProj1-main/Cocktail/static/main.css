@@ -20,18 +20,34 @@
     padding-top: 10px;
     padding-bottom:20px;
 }
+.donebutton{
+    padding-top: 300px;
+    padding-left: 150px;
+}
+.tablepad{
+    padding-top: 140px;
+}
 #grad {
     background-image: linear-gradient(to right, rgb(223, 82, 43) ,rgb(231, 99, 22), rgb(237, 154, 45));
     margin: 0%;
 }
-.imgsize{
-    height: 400px;
-    width: 400px;
+.table{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 300px;
+    left: -10px;
 }
 .homepage{
     font-size: 70px;
     text-align: center;
     color: white;
+}
+.beaker{
+    width: 100px;
+    height: 120px;
+    left: -5px;
+    position: relative;
 }
 .left{
     margin-left: -135px;
@@ -48,11 +64,59 @@
     margin-left: 90px;
     margin-top: 70px;
 }
-.lime{
+.limejuice{
     width: 50px;
     height: 160px;
     margin-left: -80px;
     margin-top: 70px;
+}
+.right{
+    margin-left: 100px;
+}
+.smallshift{
+    margin-left: 70px;
+}
+.tonic{
+    width: 40px;
+    height: 180px;
+    margin-left: -250px;
+    margin-top: 70px;
+}
+.triplesec{
+    width: 40px;
+    height: 180px;
+    margin-left: -190px;
+    margin-top: 70px;
+}
+.simple{
+    width: 50px;
+    height: 180px;
+    margin-left: 100px;
+    margin-top: 70px;
+}
+.cherry{
+    width: 40px;
+    height: 110px;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.lime{
+    width: 170px;
+    height: 150px;
+    margin-left: -80px;
+    margin-top: 70px;
+}
+.tequila{
+    width: 100px;
+    height: 170px;
+    margin-left: 70px;
+    margin-top: 20px;
+}
+.gin{
+    width: 150px;
+    height: 190px;
+    margin-right: -50px;
+    margin-top: 10px;
 }
 .orange{
     width: 80px;
