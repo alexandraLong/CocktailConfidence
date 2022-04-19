@@ -34,7 +34,7 @@ quizzes = {
         "title": "Tequila Sunrise Quiz",
         "questions": ["Which of the following ingredients can be found in a Tequila Sunrise?","How much orange juice is in one Tequila Sunrise?"],
         "options": [["Mint", "Tequila", "Gin", "Orange Juice", "Lime"], ["1/4 Cup","1/2 Cup", "3/4 Cup", "1 Cup","None"]],
-        "values": [["wrong","wrong", "wrong", "correct", "wrong"], ["wrong", "wrong", "correct", "wrong", "wrong"]]
+        "values": [[False,False, False, True, False], [False, False, True, False, False]]
     }
 }
 
@@ -63,6 +63,20 @@ def quiz(id, qno):
 @app.route('/quizzes')
 def display():
     return render_template('quiz_landing.html')
+
+@app.route('/check_answer', methods=['POST'])
+def check_answer():
+    json_data = request.get_json()
+    qno = json_data["qno"]
+    quiz = json_data["quiz"]
+    answers = quizzes[quiz]["values"][qno]
+
+    for i in range(1,6):
+        if json_data[str(i)] != answers[i-1]:
+            return jsonify(correct = False)
+    
+    return jsonify(correct = True)
+        
 
 # ajax for people.js
 if __name__ == '__main__':
