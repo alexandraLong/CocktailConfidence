@@ -35,6 +35,20 @@ quizzes = {
         "questions": ["Which of the following ingredients can be found in a Tequila Sunrise?","How much orange juice is in one Tequila Sunrise?"],
         "options": [["Mint", "Tequila", "Gin", "Orange Juice", "Lime"], ["1/4 Cup","1/2 Cup", "3/4 Cup", "1 Cup","None"]],
         "values": [[False,False, False, True, False], [False, False, True, False, False]]
+    },
+    "2" : {
+        "id": "2",
+        "title": "Gin and Tonic Quiz",
+        "questions": ["Which of the following ingredients can be found in a Gin and Tonic?","How much tonic water is in one Gin and Tonic?"],
+        "options": [["Tonic", "Tequila", "Gin", "Orange Juice", "Lime"], ["1/4 Cup","4 ounces", "3/4 Cup", "1 Cup","None"]],
+        "values": [[True,False, True, True, True], [False, True, False, False, False]]
+    },
+    "3" : {
+        "id": "3",
+        "title": "Margarita Quiz",
+        "questions": ["Which of the following ingredients can be found in a Margarita?","How much triple sec is in one Margarita?"],
+        "options": [["Mint", "Tequila", "Gin", "Triple Sec", "Lime"], ["2 ounces","1 ounce", "3/4 Cup", "1 Cup","None"]],
+        "values": [[False,True, False, True, True], [False, True, False, False, False]]
     }
 }
 
