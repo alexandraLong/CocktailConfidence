@@ -206,3 +206,11 @@
 .nopad{
     margin: 0%;
 }
+.quiz-options {
+    padding-left: 50px;
+}
+.quiz_question {
+    background-color: white;
+    height: 400px;
+    
+}
