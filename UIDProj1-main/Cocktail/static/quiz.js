@@ -1,4 +1,9 @@
 $(document).ready(function() {
+        if (qno == 3) {
+            let new_div = "<div class='top_padding'> <button onclick=location.href='/' class='bigbutton white-text'>Done</button></div>"
+        $("#question").append(new_div)
+        }
+        else {
         let new_div = "<div>" + quiz.questions[qno-1] + "<br> (select all that apply)</div>"
         $("#question").append(new_div)
 
@@ -58,4 +63,5 @@ $(document).ready(function() {
                 window.location.replace("http://127.0.0.1:5000/quiz/"+quiz.id+"/"+next);
             })
         })
+    }
 })
