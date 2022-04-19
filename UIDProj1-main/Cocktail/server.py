@@ -30,7 +30,7 @@ drinks = {
 gamepictures = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK1CBfWklpfQLb7I6B0z0JLV1Qbckgu4zUsQ&usqp=CAU"]
 quizzes = {
     "1" : {
-        "1": "1",
+        "id": "1",
         "title": "Tequila Sunrise Quiz",
         "questions": ["Which of the following ingredients can be found in a Tequila Sunrise?","How much orange juice is in one Tequila Sunrise?"],
         "options": [["Mint", "Tequila", "Gin", "Orange Juice", "Lime"], ["1/4 Cup","1/2 Cup", "3/4 Cup", "1 Cup","None"]],
@@ -54,11 +54,11 @@ def cocktailgame(drinkname):
     global drinks
     drink = drinks[drinkname]
     return render_template('cocktailgame.html', drink = drink)
-@app.route('/quiz/<id>')
-def quiz(id):
+@app.route('/quiz/<id>/<qno>')
+def quiz(id, qno):
     global quizzes
     current_quiz = quizzes[id]
-    return render_template('quiz.html', quiz = current_quiz)
+    return render_template('quiz.html', quiz = current_quiz, qno = qno)
 
 @app.route('/quizzes')
 def display():
