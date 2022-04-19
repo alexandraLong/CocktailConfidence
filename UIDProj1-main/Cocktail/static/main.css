@@ -47,6 +47,7 @@
     width: 100px;
     height: 120px;
     left: -5px;
+    top: -50px;
     position: relative;
 }
 .left{
@@ -196,4 +197,12 @@
     height: 400px;
     object-fit: cover;
     z-index: -100;
+}
+.timer{
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+}
+.nopad{
+    margin: 0%;
 }
