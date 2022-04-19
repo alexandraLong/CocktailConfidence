@@ -19,6 +19,11 @@ $(document).ready(function() {
         next += 1
         console.log(next)
         $("#submit").click(function() {
-            window.location.replace("http://127.0.0.1:5000/quiz/"+quiz.id+"/"+next);
+            $("#submit_button").css('visibility', 'hidden')
+            let button = '<button id = "next" class = "center" > Next </button>'
+            $("#next_button").append(button)
+            $("#next").click(function(){
+                window.location.replace("http://127.0.0.1:5000/quiz/"+quiz.id+"/"+next);
+            })
         })
 })
