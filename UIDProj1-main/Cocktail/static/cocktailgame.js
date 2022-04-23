@@ -23,6 +23,35 @@ function countdown() {
 
 $(document).ready(function() {
     $('.js-timeout').text("2:00");
-        countdown();
+    countdown();
+    $('.orange').draggable({revert: "valid"});
+    $('.grenadine').draggable({revert: "valid"});
+    $('.limejuice').draggable({revert: "valid"});
+    $('.tonic').draggable({revert: "valid"});
+    $('.simple').draggable({revert: "valid"});
+    $('.tequila').draggable({revert: "valid"});
+    $('.gin').draggable({revert: "valid"});
+    $('.lime').draggable({revert: "valid"});
+    $('.triplesec').draggable({revert: "valid"});
+    $('.cherry').draggable({revert: "valid"});
+
+    $('.beaker').droppable({
+        drop: function(event,ui) {
+            dialog.dialog("open");
+        }
+    });
+    dialog = $("#dialog-form").dialog({
+        autoOpen: false,
+        height: 150,
+        width: 350,
+        buttons: {
+            "Yes": function(e) {
+                console.log("Pressed Yes!");
+            },
+            Cancel: function() {
+                $(this).dialog("close");
+            }
+        }
+    });
 })
 
