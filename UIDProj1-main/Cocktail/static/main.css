@@ -10,6 +10,10 @@
 .right{
     text-align: right;
 }
+.title{
+    position: relative;
+    right: -100px;
+}
 #body{
     margin: 0%;
 }
@@ -22,7 +26,7 @@
 }
 .donebutton{
     padding-top: 300px;
-    padding-left: 150px;
+    padding-left: 270px;
 }
 .tablepad{
     padding-top: 140px;
@@ -36,7 +40,7 @@
     width: 300px;
     position: absolute;
     top: 300px;
-    left: -10px;
+    right: -100px;
 }
 .homepage{
     font-size: 70px;
@@ -46,84 +50,85 @@
 .beaker{
     width: 100px;
     height: 120px;
-    left: -5px;
     top: -50px;
+    right: -100px;
     position: relative;
 }
-.left{
-    margin-left: -135px;
+.leftside{
+    margin-left: -70px;
 }
 .labelpad{
-    padding-top: 10px;
     font-family: Oswald;
     font-size: 30px;
     color: white;
 }
-.grenadine{
-    width: 50px;
-    height: 180px;
-    margin-left: 90px;
-    margin-top: 70px;
-}
-.limejuice{
-    width: 50px;
-    height: 160px;
-    margin-left: -80px;
-    margin-top: 70px;
-}
-.right{
-    margin-left: 100px;
+.rightside{
+    margin-left: 70px;
 }
 .smallshift{
     margin-left: 70px;
 }
+.orange{
+    width: 90px;
+    height: 180px;
+    margin-top: 70px;
+    margin-left: -220px;
+}
+.grenadine{
+    width: 50px;
+    height: 180px;
+    margin-top: 70px;
+    margin-left: 70px;
+}
+.limejuice{
+    width: 50px;
+    height: 160px;
+    margin-top: 70px;
+    margin-left: -40px;
+}
 .tonic{
     width: 40px;
     height: 180px;
-    margin-left: -250px;
     margin-top: 70px;
-}
-.triplesec{
-    width: 40px;
-    height: 180px;
-    margin-left: -190px;
-    margin-top: 70px;
+    margin-left: -240px;
 }
 .simple{
     width: 50px;
     height: 180px;
-    margin-left: 100px;
     margin-top: 70px;
+    margin-left: 90px;
+}
+.triplesec{
+    width: 40px;
+    height: 180px;
+    margin-top: 30px;
+    margin-left: 50px;
 }
 .cherry{
     width: 40px;
     height: 110px;
-    margin-left: 100px;
-    margin-top: 100px;
+    margin-top: 30px;
+    margin-left: 60px;
 }
 .lime{
     width: 170px;
     height: 150px;
-    margin-left: -80px;
-    margin-top: 70px;
+    margin-top: 30px;
+    margin-left: 170px;
+}
+.limelabel{
+    margin-left: 250px;
 }
 .tequila{
-    width: 100px;
+    width: 90px;
     height: 170px;
-    margin-left: 70px;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-left: 55px;
 }
 .gin{
-    width: 150px;
+    width: 130px;
     height: 190px;
-    margin-right: -50px;
-    margin-top: 10px;
-}
-.orange{
-    width: 80px;
-    height: 180px;
-    margin-left: -250px;
-    margin-top: 70px;
+    margin-top: 30px;
 }
 .gamepage{
     font-size: 50px;

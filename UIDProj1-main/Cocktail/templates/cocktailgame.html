@@ -6,54 +6,33 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script type="text/javascript" src="{{ url_for('static', filename = 'cocktailgame.js') }}"></script>
 <body id="grad">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3">
-                <div class="row">
-                    <div class="left labelpad">Orange Juice &nbsp;&nbsp;&nbsp; Grenadine</div>
-                    <img class="orange" src="https://www.nicepng.com/png/full/85-859751_orange-juice-bottle-clipart.png" alt="orange juice">
-                    <img class="grenadine" src="https://www.nicepng.com/png/full/174-1746111_clip-art-royalty-free-stock-collection-of-free.png" alt="grenadine syrup">
-                </div>
-                <div class="row">
-                    <div class="left labelpad">Lime Juice</div>
-                    <img class="limejuice" src="https://www.nicepng.com/png/full/100-1000748_roses-sweetened-lime-juice.png" alt="lime juice">
-                </div>
-                <div class="row">
-                    <div class="left labelpad">Tonic Water &nbsp;&nbsp;&nbsp; Simple Syrup</div>
-                    <img class="tonic" src="https://www.nicepng.com/png/full/293-2939694_tonic-and-licorice-ledgers-tonic-water.png" alt="tonic water">
-                    <img class="simple" src="https://www.nicepng.com/png/full/67-678248_750-ml-agave-organic-nectar-monin-vanilla-syrup.png" alt="simple syrup">
-                </div>
+            <div class="col-md-3 leftside">
             </div>
-            <div class="col-lg-6 gamepage">
-                Make a {{drink.title}}
-                <p class="tiny">You have <span class="js-timeout">2:00</span> to make this drink.</p>
+            <div class="col-md-6 gamepage">
+                <p class="title">Make a {{drink.title}}</p>
+                <p class="tiny title">You have <span class="js-timeout">2:00</span> to make this drink.</p>
                 <div class="tablepad"></div>
                 <img class="table" src="https://www.pngall.com/wp-content/uploads/2016/04/Table-Download-PNG.png"/> 
                 <img class="beaker" src="https://www.nicepng.com/png/full/90-909225_beaker-coloring-page-beaker-with-solution.png">
                 <div class="row donebutton">
-                <button onclick="location.href='/'" class="bigbutton white-text">Done</button>
+                <button onclick="location.href='/'" class="bigbutton white-text">Done</button></div>
             </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="row">
-                    <div class="right labelpad">Tequila &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gin</div>
-                    <img class="tequila" src="https://www.nicepng.com/png/full/126-1261316_patrn-silver-tequila-700ml-patron-silver-blanco-tequila.png" alt="tequila">
-                    <img class="gin" src="https://www.nicepng.com/png/full/638-6385672_bombay-sapphire-london-dry-gin-bombay-sapphire-gin.png" alt="gin">
-                </div>
-                <div class="row">
-                    <div class="right labelpad">Lime</div>
-                    <img class="lime" src="https://www.nicepng.com/png/full/21-219751_limes-wedges-cuts-chopped-wedge-of-lime.png" alt="lime">
-                </div>
-                <div class="row">
-                    <div class="smallshift labelpad">Triple Sec &nbsp;&nbsp;&nbsp; Cherry</div>
-                    <img class="triplesec" src="https://www.nicepng.com/png/full/703-7037179_gabriel-boudier-bartender-curacao-triple-sec-liqueur.png" alt="triple sec">
-                    <img class="cherry" src="https://www.nicepng.com/png/full/8-80183_cherry-free-download-png-red-cherries-fridge-magnet.png" alt="cherry">
-                </div>
+            <div class="col-md-3 rightside">
             </div>
         </div>
     </div>
     <div class = "row text-center">
-        <div id="dialog-form" title="Select a quantity">
+        <div id="dialog-form" title="How much is in the drink?">
+            <div id="permitForm" class="grouped">
+                <select name="types" id="permit">
+                  <option selected="selected" value="">-- select quantity --</option>
+                  <option value="1">1 1/2 Ounces</option>
+                  <option value="2">1 Ounce</option>
+                  <option value="3">3/4 Ounces</option>
+                  <option value="4">3/4 Cup</option>
+                </select>
         </div>
     </div>
 <body>
