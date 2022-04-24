@@ -74,41 +74,54 @@ function makeDrag(items) {
         })
         console.log(key)
         if (key < 2) {
-            let elem = $("<img class="+value+" src='"+images[key]+"' alt='"+value+"'>")
+            let elem = $("<img class="+value+" id="+value+" src='"+images[key]+"' alt='"+value+"'>")
             $(".leftT").append(elem)
             elem.draggable({revert: "invalid"})
         } else if (key == 2) {
-            let elem = $("<img class="+value+" src='"+images[key]+"' alt='"+value+"'>")
+            let elem = $("<img class="+value+" id="+value+" src='"+images[key]+"' alt='"+value+"'>")
             $(".leftM").append(elem)
             elem.draggable({revert: "invalid"})
         } else if (key > 2 && key < 5) {
-            let elem = $("<img class="+value+" src='"+images[key]+"' alt='"+value+"'>")
+            let elem = $("<img class="+value+" id="+value+" src='"+images[key]+"' alt='"+value+"'>")
             $(".leftB").append(elem)
             elem.draggable({revert: "invalid"})
         } else if (key > 4 && key < 7) {
-            let elem = $("<img class="+value+" src='"+images[key]+"' alt='"+value+"'>")
+            let elem = $("<img class="+value+" id="+value+" src='"+images[key]+"' alt='"+value+"'>")
             $(".rightT").append(elem)
             elem.draggable({revert: "invalid"})
         } else if (key == 7) {
-            let elem = $("<img class="+value+" src='"+images[key]+"' alt='"+value+"'>")
+            let elem = $("<img class="+value+" id="+value+" src='"+images[key]+"' alt='"+value+"'>")
             $(".rightM").append(elem)
             elem.draggable({revert: "invalid"})
         } else if (key > 7 && key < 10) {
-            let elem = $("<img class="+value+" src='"+images[key]+"' alt='"+value+"'>")
+            let elem = $("<img class="+value+" id="+value+" src='"+images[key]+"' alt='"+value+"'>")
             $(".rightB").append(elem)
             elem.draggable({revert: "invalid"})
         }
     })
 }
+let tequilasunrise = {
+    "orange": 4,
+    "tequila": 1,
+    "grenadine": 3,
+    "cherry": 5
+}
+let answer;
+let dragged;
 $(document).ready(function() {
+    let drink = 0;
     $('.js-timeout').text("2:00");
     countdown();
     makeDrag(items);
     $('.beaker').droppable({
         drop: function(event,ui) {
             dialog.dialog("open");
+            dragged = $(ui.draggable).attr("id")
         }
     });
+    if (top.location.pathname === '/cocktailgame/tequilasunrise') {
+        drink = 0;
+    }
     dialog = $("#dialog-form").dialog({
         autoOpen: false,
         height: 150,
@@ -116,6 +129,20 @@ $(document).ready(function() {
         buttons: {
             "Yes": function(e) {
                 console.log("Pressed Yes!");
+                answer = $("#permit option:selected").val();  
+                if (drink == 0) {
+                    if (tequilasunrise[dragged] == answer) {
+                        console.log("yay")
+                        alert("Correct!")
+                    }
+                    else if (dragged in tequilasunrise) {
+                        alert(dragged+" is in the drink, but that's not the right amount!")
+                    }
+                    else {
+                        alert("Sorry, that ingredient is not in the drink!")
+                    }
+                }            
+                console.log(answer)
                 $(this).dialog("close");
                 makeDrag(items);
             },
