@@ -45,12 +45,15 @@ $(document).ready(function() {
                 success: function(result){
                     console.log(result)
                     let correct = result["correct"]
-                    alert(correct)
+                    let message = result["message"]
+                    // alert(correct)
                     if(correct){
                         $("#feedback").text("Correct!")
+                        $("#message").text(message.concat("!"))
                     }
                     else{
                         $("#feedback").text("Incorrect!")
+                        $("#message").text(message.concat("."))
                     }
                 },
                 error: function(request, status, error){
