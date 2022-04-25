@@ -101,27 +101,57 @@ function makeDrag(items) {
     })
 }
 let tequilasunrise = {
-    "orange": 4,
-    "tequila": 1,
-    "grenadine": 3,
-    "cherry": 5
+    "orange": 6,
+    "tequila": 3,
+    "grenadine": 1,
+    "cherry": 7
+}
+let ginandtonic = {
+    "tonic": 5,
+    "gin": 4,
+    "lime": 7
+}
+let margarita = {
+    "tequila": 3,
+    "limejuice": 1,
+    "triplesec": 2,
+    "simple":2,
+    "lime": 7
+}
+let actual = {
+    "orange": "Orange Juice",
+    "tequila": "Tequila",
+    "grenadine": "Grenadine",
+    "cherry": "Maraschino Cherry",
+    "limejuice" : "Lime Juice",
+    "tonic": "Tonic water",
+    "simple": "Simple Syrup",
+    "gin": "Gin",
+    "lime": "Lime",
+    "triplesec": "Triple Sec"
 }
 let answer;
 let dragged;
+let realname;
+let n = 0;
+let drink = 0;
 $(document).ready(function() {
-    let drink = 0;
     $('.js-timeout').text("2:00");
     countdown();
     makeDrag(items);
+    if (top.location.pathname === '/cocktailgame/tequilasunrise') {
+        drink = 0;
+    }else if (top.location.pathname === '/cocktailgame/ginandtonic') {
+        drink = 1;
+    }else if (top.location.pathname === '/cocktailgame/margarita') {
+        drink = 2;
+    }
     $('.beaker').droppable({
         drop: function(event,ui) {
             dialog.dialog("open");
             dragged = $(ui.draggable).attr("id")
         }
     });
-    if (top.location.pathname === '/cocktailgame/tequilasunrise') {
-        drink = 0;
-    }
     dialog = $("#dialog-form").dialog({
         autoOpen: false,
         height: 150,
@@ -130,18 +160,58 @@ $(document).ready(function() {
             "Yes": function(e) {
                 console.log("Pressed Yes!");
                 answer = $("#permit option:selected").val();  
-                if (drink == 0) {
+                if (drink == 0 && n != 4) {
                     if (tequilasunrise[dragged] == answer) {
-                        console.log("yay")
                         alert("Correct!")
+                        n += 1
+                        if (n == 4) {
+                            alert("You've finished the game!")
+                        }
                     }
                     else if (dragged in tequilasunrise) {
-                        alert(dragged+" is in the drink, but that's not the right amount!")
+                        realname = actual[dragged]
+                        alert(realname+" is in the drink, but that's not the right amount!")
                     }
                     else {
-                        alert("Sorry, that ingredient is not in the drink!")
+                        realname = actual[dragged]
+                        alert("Sorry, "+realname+" is not in the drink!")
                     }
-                }            
+                }
+                if (drink == 1 && n != 3) {
+                    console.log("hi")
+                    if (ginandtonic[dragged] == answer) {
+                        alert("Correct!")
+                        n += 1
+                        if (n == 3) {
+                            alert("You've finished the game!")
+                        }
+                    }
+                    else if (dragged in ginandtonic) {
+                        realname = actual[dragged]
+                        alert(realname+" is in the drink, but that's not the right amount!")
+                    }
+                    else {
+                        realname = actual[dragged]
+                        alert("Sorry, "+realname+" is not in the drink!")
+                    }
+                }           
+                if (drink == 2 && n != 5) {
+                    if (margarita[dragged] == answer) {
+                        alert("Correct!")
+                        n += 1
+                        if (n == 5) {
+                            alert("You've finished the game!")
+                        }
+                    }
+                    else if (dragged in margarita) {
+                        realname = actual[dragged]
+                        alert(realname+" is in the drink, but that's not the right amount!")
+                    }
+                    else {
+                        realname = actual[dragged]
+                        alert("Sorry, "+realname+" is not in the drink!")
+                    }
+                }         
                 console.log(answer)
                 $(this).dialog("close");
                 makeDrag(items);
