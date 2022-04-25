@@ -43,13 +43,17 @@ $(document).ready(function() {
                 contentType: "application/json; charset=utf-8",
                 data : JSON.stringify(data_to_save),
                 success: function(result){
+                    console.log(result)
                     let correct = result["correct"]
-                    alert(correct)
+                    let message = result["message"]
+                    // alert(correct)
                     if(correct){
-                        $("#feedback").value("Correct!")
+                        $("#feedback").text("Correct!")
+                        $("#message").text(message.concat("!"))
                     }
                     else{
-                        $("#feedback").value("Incorrect!")
+                        $("#feedback").text("Incorrect!")
+                        $("#message").text(message.concat("."))
                     }
                 },
                 error: function(request, status, error){

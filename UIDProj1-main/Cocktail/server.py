@@ -1,3 +1,4 @@
+from email import message
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
@@ -34,21 +35,24 @@ quizzes = {
         "title": "Tequila Sunrise Quiz",
         "questions": ["Which of the following ingredients can be found in a Tequila Sunrise?","How much orange juice is in one Tequila Sunrise?"],
         "options": [["Mint", "Tequila", "Gin", "Orange Juice", "Lime"], ["1/4 Cup","1/2 Cup", "3/4 Cup", "1 Cup","None"]],
-        "values": [[False,False, False, True, False], [False, False, True, False, False]]
+        "values": [[False,False, False, True, False], [False, False, True, False, False]],
+        "messages": ["Orange juice is the only one of these ingredients in a Tequila Sunrise", "There is 3/4 of a cup of orange juice in one Tequila Sunrise"]
     },
     "2" : {
         "id": "2",
         "title": "Gin and Tonic Quiz",
         "questions": ["Which of the following ingredients can be found in a Gin and Tonic?","How much tonic water is in one Gin and Tonic?"],
         "options": [["Tonic", "Tequila", "Gin", "Orange Juice", "Lime"], ["1/4 Cup","4 ounces", "3/4 Cup", "1 Cup","None"]],
-        "values": [[True,False, True, True, True], [False, True, False, False, False]]
+        "values": [[True,False, True, True, True], [False, True, False, False, False]],
+        "messages": ["Except for tequila, all of the above ingredients are in a Gin and Tonic", "There are 4 ounces of water in a Gin and Tonic"]
     },
     "3" : {
         "id": "3",
         "title": "Margarita Quiz",
         "questions": ["Which of the following ingredients can be found in a Margarita?","How much triple sec is in one Margarita?"],
         "options": [["Mint", "Tequila", "Gin", "Triple Sec", "Lime"], ["2 ounces","1 ounce", "3/4 Cup", "1 Cup","None"]],
-        "values": [[False,True, False, True, True], [False, True, False, False, False]]
+        "values": [[False,True, False, True, True], [False, True, False, False, False]],
+        "messages": ["Of these ingredients, tequila, triple sec, and lime are the ones in a Margarita", "There is 1 ounce of triple sec in a Margarita"]
     }
 }
 
@@ -78,18 +82,28 @@ def quiz(id, qno):
 def display():
     return render_template('quiz_landing.html')
 
-@app.route('/check_answer', methods=['POST'])
-def check_answer():
+@app.route('/quiz/<id>/check_answer', methods=['POST'])
+def check_answer(id):
     json_data = request.get_json()
-    qno = json_data["qno"]
+    qno = int(json_data["qno"])-1
     quiz = json_data["quiz"]
-    answers = quizzes[quiz]["values"][qno]
+    # print(qno)
+    # print()
+    # print(quiz)
+    # print()
+    # print(quiz["values"])
+    # print()
+    # print(quiz["values"][qno])
+    # print()
+    answers = quiz["values"][qno]
+
+    #print(quiz["messages"][qno])
 
     for i in range(1,6):
         if json_data[str(i)] != answers[i-1]:
-            return jsonify(correct = False)
+            return jsonify(correct = False, message = quiz["messages"][qno])
     
-    return jsonify(correct = True)
+    return jsonify(correct = True, message = quiz["messages"][qno])
         
 
 # ajax for people.js
