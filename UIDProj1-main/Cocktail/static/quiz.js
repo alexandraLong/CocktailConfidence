@@ -43,13 +43,14 @@ $(document).ready(function() {
                 contentType: "application/json; charset=utf-8",
                 data : JSON.stringify(data_to_save),
                 success: function(result){
+                    console.log(result)
                     let correct = result["correct"]
                     alert(correct)
                     if(correct){
-                        $("#feedback").value("Correct!")
+                        $("#feedback").text("Correct!")
                     }
                     else{
-                        $("#feedback").value("Incorrect!")
+                        $("#feedback").text("Incorrect!")
                     }
                 },
                 error: function(request, status, error){

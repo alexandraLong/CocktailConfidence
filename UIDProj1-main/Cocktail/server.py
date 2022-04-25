@@ -78,12 +78,20 @@ def quiz(id, qno):
 def display():
     return render_template('quiz_landing.html')
 
-@app.route('/check_answer', methods=['POST'])
-def check_answer():
+@app.route('/quiz/<id>/check_answer', methods=['POST'])
+def check_answer(id):
     json_data = request.get_json()
-    qno = json_data["qno"]
+    qno = int(json_data["qno"])-1
     quiz = json_data["quiz"]
-    answers = quizzes[quiz]["values"][qno]
+    # print(qno)
+    # print()
+    # print(quiz)
+    # print()
+    # print(quiz["values"])
+    # print()
+    # print(quiz["values"][qno])
+    # print()
+    answers = quiz["values"][qno]
 
     for i in range(1,6):
         if json_data[str(i)] != answers[i-1]:
