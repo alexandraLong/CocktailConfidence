@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'howto.js') }}"></script>
+<script>
+    let drink = {{drink|tojson}}
+</script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <body id="grad">
     <div class="container">
@@ -16,9 +20,8 @@
                 </div>
                 <div class="col-lg-6 top_padding">
                     <span class = "heading">Ingredients List for {{drink.title}}</span>
-                    {% for i in drink.ingredients %}
-                        <span class = "white-text"><li>{{i}}</li></span>
-                    {% endfor %}
+                    <div>Check off ingredients as you learn about them in the video!</div>
+                    <div id="ingredients" class = "ingredients"></div>
                 </div>
             </div>
             <div class="row center top_padding">
