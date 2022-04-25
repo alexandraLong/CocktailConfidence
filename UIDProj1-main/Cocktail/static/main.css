@@ -217,5 +217,83 @@
 .quiz_question {
     background-color: white;
     height: 450px;
-    
+}
+.success_message {
+    top: 200px;
+    position: relative;
+    left: 90px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.ginandtonic1 {
+    position: relative;
+    background-color: white;
+    height: 30px;
+    width: 80px;
+    left: 320px;
+    bottom: 90px;
+}
+.ginandtonic2 {
+    position: relative;
+    background-color: white;
+    height: 30px;
+    width: 80px;
+    left: 320px;
+    bottom: 150px;
+}
+.margarita1 {
+    position: relative;
+    background-color: rgb(236, 238, 188);
+    height: 15px;
+    width: 80px;
+    left: 320px;
+    bottom: 75px;
+}
+.margarita2 {
+    position: relative;
+    background-color: rgb(236, 238, 188);
+    height: 15px;
+    width: 80px;
+    left: 320px;
+    bottom: 105px;
+}
+.margarita3 {
+    position: relative;
+    background-color: rgb(236, 238, 188);
+    height: 15px;
+    width: 80px;
+    left: 320px;
+    bottom: 135px;
+}
+.margarita4 {
+    position: relative;
+    background-color: rgb(236, 238, 188);
+    height: 15px;
+    width: 80px;
+    left: 320px;
+    bottom: 165px;
+}
+.tequilasunrise1 {
+    position: relative;
+    background-color: rgb(251, 202, 118);
+    height: 20px;
+    width: 80px;
+    left: 320px;
+    bottom: 80px;
+}
+.tequilasunrise2 {
+    position: relative;
+    background-color: rgb(251, 202, 118);
+    height: 20px;
+    width: 80px;
+    left: 320px;
+    bottom: 120px;
+}
+.tequilasunrise3 {
+    position: relative;
+    background-color: rgb(251, 202, 118);
+    height: 20px;
+    width: 80px;
+    left: 320px;
+    bottom: 160px;
 }

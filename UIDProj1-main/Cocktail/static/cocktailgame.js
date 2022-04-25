@@ -1,4 +1,5 @@
 let interval;
+let done = false;
 
 function countdown() {
   clearInterval(interval);
@@ -17,7 +18,16 @@ function countdown() {
 
       $('.js-timeout').html(minutes + ':' + seconds);
 
-      if (minutes == 0 && seconds == 0) clearInterval(interval);
+      if (done == true) {
+          clearInterval(interval);
+      }
+
+      if (minutes == 0 && seconds == 0) {
+          clearInterval(interval);
+          alert("You're out of time! You must start over!")
+          window.location.href = "http://127.0.0.1:5000/cocktailgame/ginandtonic";
+        //   timer.empty();
+      };
   }, 1000);
 }
 let images = [
@@ -164,8 +174,14 @@ $(document).ready(function() {
                     if (tequilasunrise[dragged] == answer) {
                         alert("Correct!")
                         n += 1
+                        let filling = '<div class = "tequilasunrise'+n+'"></div>';
+                        $(".fill").append(filling);
                         if (n == 4) {
-                            alert("You've finished the game!")
+                            done = true;
+                            $(".fill").empty();
+                            $(".beaker").attr("src", "https://www.nicepng.com/png/full/87-875522_cocktails-clipart-tequila-cocktail-clipart.png");
+                            $("#success_message").append("Correct<br>Great Job!")
+                            // alert("You've finished the game!")
                         }
                     }
                     else if (dragged in tequilasunrise) {
@@ -181,9 +197,15 @@ $(document).ready(function() {
                     console.log("hi")
                     if (ginandtonic[dragged] == answer) {
                         alert("Correct!")
-                        n += 1
+                        n+=1
+                        let filling = '<div class = "ginandtonic'+n+'"></div>';
+                        $(".fill").append(filling);
                         if (n == 3) {
-                            alert("You've finished the game!")
+                            done = true;
+                            $(".fill").empty();
+                            $(".beaker").attr("src", "https://www.nicepng.com/png/full/438-4389108_lemonade-png-download-image-gin-tonic-splash-hd.png");
+                            $("#success_message").append("Correct<br>Great Job!")
+                            // alert("You've finished the game!")
                         }
                     }
                     else if (dragged in ginandtonic) {
@@ -198,9 +220,15 @@ $(document).ready(function() {
                 if (drink == 2 && n != 5) {
                     if (margarita[dragged] == answer) {
                         alert("Correct!")
-                        n += 1
+                        n+=1
+                        let filling = '<div class = "margarita'+n+'"></div>';
+                        $(".fill").append(filling);
                         if (n == 5) {
-                            alert("You've finished the game!")
+                            done = true;
+                            $(".fill").empty();
+                            $(".beaker").attr("src", "https://www.nicepng.com/png/full/21-213087_margarita-png-hd-svg-library-library-margarita-cocktail.png");
+                            $("#success_message").append("Correct<br>Great Job!")
+                            // alert("You've finished the game!")
                         }
                     }
                     else if (dragged in margarita) {
