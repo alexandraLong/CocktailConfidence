@@ -1,7 +1,9 @@
+let scoreNum = "0"
+
 $(document).ready(function() {
         if (qno == 3) {
-            let new_div = "<div class='top_padding'> <button onclick=location.href='/' class='bigbutton white-text'>Done</button></div>"
-        $("#question").append(new_div)
+           let new2_div = "<div class='top_padding'> <button onclick=location.href='/' class='bigbutton white-text'>Done</button></div>"
+        $("#question").append(new2_div)
         }
         else {
         let new_div = "<div>" + quiz.questions[qno-1] + "<br> (select all that apply)</div>"
@@ -11,11 +13,11 @@ $(document).ready(function() {
         $("#question_number").prepend(q)
 
         // $form = $("<form></form>")
-        let form = '<input type="radio" id = "1" value="'+quiz.options[qno-1][0]+'"><label for = "1">&ensp;'+quiz.options[qno-1][0]+'</label><br>'
-        form += '<input type="radio" id = "2" value="'+quiz.options[qno-1][1]+'"><label for = "2">&ensp;'+quiz.options[qno-1][1]+'</label><br>'
-        form += '<input type="radio" id = "3" value="'+quiz.options[qno-1][2]+'"><label for = "3">&ensp;'+quiz.options[qno-1][2]+'</label><br>'
-        form += '<input type="radio" id = "4" value="'+quiz.options[qno-1][3]+'"><label for = "4">&ensp;'+quiz.options[qno-1][3]+'</label><br>'
-        form += '<input type="radio" id = "5" value="'+quiz.options[qno-1][4]+'"><label for = "5">&ensp;'+quiz.options[qno-1][4]+'</label><br>'
+        let form = '<input type="checkbox" id = "1" value="'+quiz.options[qno-1][0]+'"><label for = "1">&ensp;'+quiz.options[qno-1][0]+'</label><br>'
+        form += '<input type="checkbox" id = "2" value="'+quiz.options[qno-1][1]+'"><label for = "2">&ensp;'+quiz.options[qno-1][1]+'</label><br>'
+        form += '<input type="checkbox" id = "3" value="'+quiz.options[qno-1][2]+'"><label for = "3">&ensp;'+quiz.options[qno-1][2]+'</label><br>'
+        form += '<input type="checkbox" id = "4" value="'+quiz.options[qno-1][3]+'"><label for = "4">&ensp;'+quiz.options[qno-1][3]+'</label><br>'
+        form += '<input type="checkbox" id = "5" value="'+quiz.options[qno-1][4]+'"><label for = "5">&ensp;'+quiz.options[qno-1][4]+'</label><br>'
         $("#options").append(form)
 
         let button = '<button id = "submit" class = "center" > Submit </button>'
