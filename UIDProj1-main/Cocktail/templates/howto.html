@@ -19,14 +19,13 @@
                     <iframe id="videos" src="{{drink.video}}"></iframe> 
                 </div>
                 <div class="col-lg-6 top_padding">
-                    <span class = "heading">Ingredients List for {{drink.title}}</span>
-                    <div>Check off ingredients as you learn about them in the video!</div>
-                    <div id="ingredients" class = "ingredients"></div>
+                    <div class = "heading center">Ingredients List for {{drink.title}}</div>
+                    <div id="ingredients" class ="ingredients"></div>
                 </div>
             </div>
             <div class="row center top_padding">
                 <div class="col-lg-6">
-                    <button onclick="location.href='/cocktailgame/{{drink.id}}'" class="bigbutton white-text">Cocktail Game</button>
+                    <button id=game disabled=true onclick="location.href='/cocktailgame/{{drink.id}}'" class="bigbutton white-text">Cocktail Game</button>
                 </div>
                 <div class="col-lg-6 ">
                     <button onclick="location.href='/'" class="bigbutton white-text">Home</button>
