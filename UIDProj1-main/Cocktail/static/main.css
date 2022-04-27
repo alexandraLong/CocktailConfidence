@@ -27,6 +27,15 @@
 .donebutton{
     padding-top: 300px;
     padding-left: 270px;
+    position: fixed;
+    bottom: 100px;
+}
+.fixed{
+    position: fixed;
+    right: 460px;
+}
+.left {
+    right: 550px;
 }
 .tablepad{
     padding-top: 140px;
@@ -50,9 +59,9 @@
 .beaker{
     width: 100px;
     height: 120px;
-    top: -65px;
-    right: -100px;
-    position: relative;
+    top: 270px;
+    left: 690px;
+    position: fixed;
 }
 .leftside{
     margin-left: -70px;
@@ -290,6 +299,35 @@
     width: 80px;
     left: 320px;
     bottom: 165px;
+}
+.orangecolor{
+    background-color: rgb(251, 202, 118);
+}
+.grenadinecolor{
+    background-color: rgb(233, 78, 31);
+}
+.tequilacolor{
+    background-color: rgb(221, 128, 40);
+}
+.toniccolor{
+    background-color: rgb(226, 213, 190);
+}
+.simpleecolor{
+    background-color: rgb(232, 203, 194);
+}
+.gincolor{
+    background-color: rgb(239, 214, 191);
+}
+.drink{
+    position: absolute;
+    z-index:10;
+    margin-top: 10px;
+    float: inherit;
+    height: 72px;
+    width: 90px;
+    border-radius: 20px;
+    top: 245px;
+    right: 142px;
 }
 .tequilasunrise1 {
     position: relative;

@@ -174,10 +174,14 @@ $(document).ready(function() {
                     if (tequilasunrise[dragged] == answer) {
                         alert("Correct!")
                         n += 1
-                        let filling = '<div class = "tequilasunrise'+n+'"></div>';
-                        $(".fill").append(filling);
+                        //let filling = '<div class = "tequilasunrise'+n+'"></div>';
+                        let fill = "<div class='fill' ></div>";
+                        $(".gamepage").append(fill);
+                        let filling = "<div class='drink "+dragged+"color'></div>";
+                        $(".fill").append(filling)
                         if (n == 4) {
                             done = true;
+                            $("#drinkdone").removeAttr("disabled")
                             $(".fill").empty();
                             $(".beaker").attr("src", "https://www.nicepng.com/png/full/87-875522_cocktails-clipart-tequila-cocktail-clipart.png");
                             $("#success_message").append("Correct<br>Great Job!")
@@ -198,8 +202,10 @@ $(document).ready(function() {
                     if (ginandtonic[dragged] == answer) {
                         alert("Correct!")
                         n+=1
-                        let filling = '<div class = "ginandtonic'+n+'"></div>';
-                        $(".fill").append(filling);
+                        let fill = "<div class='fill' ></div>";
+                        $(".gamepage").append(fill);
+                        let filling = "<div class='drink "+dragged+"color'></div>";
+                        $(".fill").append(filling)
                         if (n == 3) {
                             done = true;
                             $(".fill").empty();
@@ -221,8 +227,10 @@ $(document).ready(function() {
                     if (margarita[dragged] == answer) {
                         alert("Correct!")
                         n+=1
-                        let filling = '<div class = "margarita'+n+'"></div>';
-                        $(".fill").append(filling);
+                        let fill = "<div class='fill' ></div>";
+                        $(".gamepage").append(fill);
+                        let filling = "<div class='drink "+dragged+"color'></div>";
+                        $(".fill").append(filling)
                         if (n == 5) {
                             done = true;
                             $(".fill").empty();
