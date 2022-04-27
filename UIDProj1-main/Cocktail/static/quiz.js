@@ -20,14 +20,14 @@ $(document).ready(function() {
         form += '<input type="checkbox" id = "5" value="'+quiz.options[qno-1][4]+'"><label for = "5">&ensp;'+quiz.options[qno-1][4]+'</label><br>'
         $("#options").append(form)
 
-        let button = '<button id = "submit" class = "center" > Submit </button>'
+        let button = '<button id = "submit" class = "bigbutton white-text center" > Submit </button>'
         $("#submit_button").append(button)
         let next = parseInt(qno)
         next += 1
         console.log(next)
         $("#submit").click(function() {
             $("#submit_button").css('visibility', 'hidden')
-            let button = '<button id = "next" class = "center" > Next </button>'
+            let button = '<button id = "next" class = "bigbutton white-text center" > Next </button>'
             console.log(document.getElementById('1').checked)
             $("#next_button").append(button)
             let data_to_save = {"1": document.getElementById('1').checked,
