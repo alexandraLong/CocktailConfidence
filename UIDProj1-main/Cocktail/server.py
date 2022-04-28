@@ -16,7 +16,7 @@ drinks = {
         "id": "ginandtonic",
         "title": "Gin and Tonic",
         "video": "https://cdn.jwplayer.com/videos/aOvVQdyT-tXzwfO7V.mp4",
-        "ingredients": ["2 ounces Gin", "1/2 cup Tonic Water", "Lime"],
+        "ingredients": ["2 ounces Gin", "1/2 cup Tonic Water", "1 Lime"],
         "images": ["https://www.thespruceeats.com/thmb/WsIZugwpzqLynmkB4ZqGrfcE_Og=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-and-tonic-recipe-759300-hero-01-aa12e6504f944c54b8b9c589cc1d0ac6.jpg"]
 
     },
@@ -24,7 +24,7 @@ drinks = {
         "id": "margarita",
         "title": "Margarita",
         "video": "https://www.youtube.com/embed/6F6LdutFKyM",
-        "ingredients": ["1 ounce Triple Sec", "3/4 ounces Lime Juice", "1 1/2 ounces Tequila", "1 ounce Simply Syrup", "Lime"],
+        "ingredients": ["1 ounce Triple Sec", "3/4 ounces Lime Juice", "1 1/2 ounces Tequila", "1 ounce Simple Syrup", "1 Lime"],
         "images": [""]
     }
 }
