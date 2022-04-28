@@ -217,6 +217,7 @@ $(document).ready(function() {
                         $(".fill").append(filling)
                         if (n == 3) {
                             done = true;
+                            $("#drinkdone").removeAttr("disabled")
                             $(".fill").empty();
                             $(".beaker").attr("src", "https://www.nicepng.com/png/full/438-4389108_lemonade-png-download-image-gin-tonic-splash-hd.png");
                             $("#success_message").append("Correct<br>Great Job!")
@@ -242,6 +243,7 @@ $(document).ready(function() {
                         $(".fill").append(filling)
                         if (n == 5) {
                             done = true;
+                            $("#drinkdone").removeAttr("disabled")
                             $(".fill").empty();
                             $(".beaker").attr("src", "https://www.nicepng.com/png/full/21-213087_margarita-png-hd-svg-library-library-margarita-cocktail.png");
                             $("#success_message").append("Correct<br>Great Job!")
