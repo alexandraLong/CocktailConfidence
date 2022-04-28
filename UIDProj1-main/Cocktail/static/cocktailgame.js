@@ -26,7 +26,6 @@ function countdown() {
           clearInterval(interval);
           alert("You're out of time! You must start over!")
           window.location.href = "http://127.0.0.1:5000/cocktailgame/ginandtonic";
-        //   timer.empty();
       };
   }, 1000);
 }
@@ -233,8 +232,7 @@ $(document).ready(function() {
                             $("#drinkdone").removeAttr("disabled")
                             $(".fill").empty();
                             $(".beaker").attr("src", "https://www.nicepng.com/png/full/438-4389108_lemonade-png-download-image-gin-tonic-splash-hd.png");
-                            $("#success_message").append("Correct<br>Great Job!")
-                            // alert("You've finished the game!")
+                            $("#success_message").append("Correct<br>Great Job!");
                         }
                     }
                     else if (dragged in ginandtonic) {
@@ -266,7 +264,6 @@ $(document).ready(function() {
                             $(".fill").empty();
                             $(".beaker").attr("src", "https://www.nicepng.com/png/full/21-213087_margarita-png-hd-svg-library-library-margarita-cocktail.png");
                             $("#success_message").append("Correct<br>Great Job!")
-                            // alert("You've finished the game!")
                         }
                     }
                     else if (dragged in margarita) {
