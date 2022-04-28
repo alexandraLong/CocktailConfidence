@@ -162,6 +162,15 @@ $(document).ready(function() {
             dragged = $(ui.draggable).attr("id")
         }
     });
+    hint = $("#dialog").dialog({
+        autoOpen: false,
+        height: 150,
+        width: 350
+    })
+    $("#hintbutton").click(function() {
+        hint.dialog("open");
+        $("#hintbutton").attr('disabled', 'true');
+    })
     dialog = $("#dialog-form").dialog({
         autoOpen: false,
         height: 150,
