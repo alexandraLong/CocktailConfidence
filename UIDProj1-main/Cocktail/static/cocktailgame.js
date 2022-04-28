@@ -171,6 +171,11 @@ $(document).ready(function() {
         hint.dialog("open");
         $("#hintbutton").attr('disabled', 'true');
     })
+    feedback = $("#feedback").dialog({
+        autoOpen: false,
+        height: 150,
+        width: 250
+    })
     dialog = $("#dialog-form").dialog({
         autoOpen: false,
         height: 150,
@@ -181,7 +186,10 @@ $(document).ready(function() {
                 answer = $("#permit option:selected").val();  
                 if (drink == 0 && n != 4) {
                     if (tequilasunrise[dragged] == answer) {
-                        alert("Correct!")
+                        feedback.empty()
+                        feedback.append("Correct!")
+                        feedback.dialog("open")
+                        // alert("Correct!")"Sorry, "+realname+" is not in the drink!"
                         n += 1
                         //let filling = '<div class = "tequilasunrise'+n+'"></div>';
                         let fill = "<div class='fill' ></div>";
@@ -194,22 +202,27 @@ $(document).ready(function() {
                             $(".fill").empty();
                             $(".beaker").attr("src", "https://www.nicepng.com/png/full/87-875522_cocktails-clipart-tequila-cocktail-clipart.png");
                             $("#success_message").append("Correct<br>Great Job!")
-                            // alert("You've finished the game!")
                         }
                     }
                     else if (dragged in tequilasunrise) {
                         realname = actual[dragged]
-                        alert(realname+" is in the drink, but that's not the right amount!")
+                        feedback.empty()
+                        feedback.append(realname+" is in the drink, but that's not the right amount!")
+                        feedback.dialog("open")
                     }
                     else {
                         realname = actual[dragged]
-                        alert("Sorry, "+realname+" is not in the drink!")
+                        feedback.empty()
+                        feedback.append("Sorry, "+realname+" is not in the drink!")
+                        feedback.dialog("open")
                     }
                 }
                 if (drink == 1 && n != 3) {
                     console.log("hi")
                     if (ginandtonic[dragged] == answer) {
-                        alert("Correct!")
+                        feedback.empty()
+                        feedback.append("Correct!")
+                        feedback.dialog("open")
                         n+=1
                         let fill = "<div class='fill' ></div>";
                         $(".gamepage").append(fill);
@@ -226,16 +239,22 @@ $(document).ready(function() {
                     }
                     else if (dragged in ginandtonic) {
                         realname = actual[dragged]
-                        alert(realname+" is in the drink, but that's not the right amount!")
+                        feedback.empty()
+                        feedback.append(realname+" is in the drink, but that's not the right amount!")
+                        feedback.dialog("open")
                     }
                     else {
                         realname = actual[dragged]
-                        alert("Sorry, "+realname+" is not in the drink!")
+                        feedback.empty()
+                        feedback.append("Sorry, "+realname+" is not in the drink!")
+                        feedback.dialog("open")
                     }
                 }           
                 if (drink == 2 && n != 5) {
                     if (margarita[dragged] == answer) {
-                        alert("Correct!")
+                        feedback.empty()
+                        feedback.append("Correct!")
+                        feedback.dialog("open")
                         n+=1
                         let fill = "<div class='fill' ></div>";
                         $(".gamepage").append(fill);
@@ -252,11 +271,15 @@ $(document).ready(function() {
                     }
                     else if (dragged in margarita) {
                         realname = actual[dragged]
-                        alert(realname+" is in the drink, but that's not the right amount!")
+                        feedback.empty()
+                        feedback.append(realname+" is in the drink, but that's not the right amount!")
+                        feedback.dialog("open")
                     }
                     else {
                         realname = actual[dragged]
-                        alert("Sorry, "+realname+" is not in the drink!")
+                        feedback.empty()
+                        feedback.append("Sorry, "+realname+" is not in the drink!")
+                        feedback.dialog("open")
                     }
                 }         
                 console.log(answer)
