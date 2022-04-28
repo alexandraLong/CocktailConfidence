@@ -144,6 +144,7 @@ let dragged;
 let realname;
 let n = 0;
 let drink = 0;
+let correctdrag = [];
 $(document).ready(function() {
     $('.js-timeout').text("2:00");
     countdown();
@@ -157,8 +158,16 @@ $(document).ready(function() {
     }
     $('.beaker').droppable({
         drop: function(event,ui) {
-            dialog.dialog("open");
             dragged = $(ui.draggable).attr("id")
+            if (correctdrag.includes(dragged) == true) {
+                feedback.empty()
+                feedback.append("Sorry, you've already put this ingredient in the drink!")
+                feedback.dialog("open")
+                makeDrag(items)
+            }
+            else {
+                dialog.dialog("open");
+            }
         }
     });
     hint = $("#dialog").dialog({
@@ -188,13 +197,12 @@ $(document).ready(function() {
                         feedback.empty()
                         feedback.append("Correct!")
                         feedback.dialog("open")
-                        // alert("Correct!")"Sorry, "+realname+" is not in the drink!"
                         n += 1
-                        //let filling = '<div class = "tequilasunrise'+n+'"></div>';
                         let fill = "<div class='fill' ></div>";
                         $(".gamepage").append(fill);
                         let filling = "<div class='drink "+dragged+"color'></div>";
                         $(".fill").append(filling)
+                        correctdrag.push(dragged)
                         if (n == 4) {
                             done = true;
                             $("#drinkdone").removeAttr("disabled")
