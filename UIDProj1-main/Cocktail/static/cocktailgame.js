@@ -247,6 +247,7 @@ $(document).ready(function() {
                         $(".gamepage").append(fill);
                         let filling = "<div class='drink "+dragged+"color'></div>";
                         $(".fill").append(filling)
+                        correctdrag.push(dragged)
                         if (n == 3) {
                             done = true;
                             $("#drinkdone").removeAttr("disabled")
@@ -278,6 +279,7 @@ $(document).ready(function() {
                         $(".gamepage").append(fill);
                         let filling = "<div class='drink "+dragged+"color'></div>";
                         $(".fill").append(filling)
+                        correctdrag.push(dragged)
                         if (n == 5) {
                             done = true;
                             $("#drinkdone").removeAttr("disabled")
