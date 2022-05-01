@@ -26,7 +26,7 @@ $(document).ready(function() {
         next += 1
         console.log(next)
         $("#submit").click(function() {
-            $("#submit_button").css('visibility', 'hidden')
+            $("#submit_button").css('display', 'none')
             let button = '<button id = "next" class = "bigbutton white-text center" > Next </button>'
             console.log(document.getElementById('1').checked)
             $("#next_button").append(button)
