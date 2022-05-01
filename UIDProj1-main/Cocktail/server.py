@@ -36,7 +36,7 @@ quizzes = {
         "questions": ["Which of the following ingredients can be found in a Tequila Sunrise?","How much orange juice is in one Tequila Sunrise?"],
         "options": [["Mint", "Tequila", "Gin", "Orange Juice", "Lime"], ["1/4 Cup","1/2 Cup", "3/4 Cup", "1 Cup","None"]],
         "values": [[False,True, False, True, False], [False, False, True, False, False]],
-        "messages": ["Both Orange Juice and Tequila are found in a Tequila Sunrise.", "There is 3/4 of a cup of orange juice in one Tequila Sunrise"]
+        "messages": ["Both Orange Juice and Tequila are found in a Tequila Sunrise", "There is 3/4 of a cup of orange juice in one Tequila Sunrise"]
     },
     "2" : {
         "id": "2",

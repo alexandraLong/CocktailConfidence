@@ -364,3 +364,14 @@
     left: 320px;
     bottom: 160px;
 }
+
+.feedback{
+    font-size: 50px;
+    margin-left: -20px;
+}
+.message{
+    font-size: 25px;
+    color: rgb(111, 110, 110);
+    margin-left: -20px;
+    padding: 5px;
+}
