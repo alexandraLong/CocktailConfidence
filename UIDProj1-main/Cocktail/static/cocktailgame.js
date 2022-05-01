@@ -29,6 +29,17 @@ function countdown() {
       };
   }, 1000);
 }
+function deductTen(){
+    clearInterval(interval);
+    var timer = $('.js-timeout').html();
+    timer = timer.split(':');
+    var minutes = timer[0];
+    var seconds = timer[1];
+    seconds = seconds-10;
+    $('.js-timeout').html(minutes + ':' + seconds);
+    countdown();
+
+}
 let images = [
     "https://www.nicepng.com/png/full/85-859751_orange-juice-bottle-clipart.png",
     "https://www.nicepng.com/png/full/174-1746111_clip-art-royalty-free-stock-collection-of-free.png",
@@ -177,6 +188,7 @@ $(document).ready(function() {
     })
     $("#hintbutton").click(function() {
         hint.dialog("open");
+        deductTen();
         $("#hintbutton").attr('disabled', 'true');
     })
     feedback = $("#feedback").dialog({
