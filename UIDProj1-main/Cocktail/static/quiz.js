@@ -9,7 +9,7 @@ $(document).ready(function() {
         let new_div = "<div>" + quiz.questions[qno-1] + "<br> (select all that apply)</div>"
         $("#question").append(new_div)
 
-        let q = "Question  " + (qno) + "/5"
+        let q = "Question  " + (qno) + "/2"
         $("#question_number").prepend(q)
 
         // $form = $("<form></form>")
