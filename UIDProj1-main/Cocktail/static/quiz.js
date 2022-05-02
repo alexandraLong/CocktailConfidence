@@ -2,7 +2,9 @@ let scoreNum = "0"
 
 $(document).ready(function() {
         if (qno == 3) {
-           let new2_div = "<div class='top_padding'> <button onclick=location.href='/' class='bigbutton white-text'>Done</button></div>"
+            let score = "<br>You got " + scoreNum + "/2 questions correct!<br>Press Done to learn about more drinks.";
+            $("#question_number").prepend(score);
+            let new2_div = "<div class='top_padding'> <button onclick=location.href='/' class='bigbutton white-text'>Done</button></div>"
         $("#question").append(new2_div)
         }
         else {
@@ -52,6 +54,7 @@ $(document).ready(function() {
                     if(correct){
                         $("#feedback").text("Correct!")
                         $("#message").text(message.concat("!"))
+                        scoreNum +=1;
                     }
                     else{
                         $("#feedback").text("Incorrect!")
