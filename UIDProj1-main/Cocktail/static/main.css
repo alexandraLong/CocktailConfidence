@@ -7,6 +7,10 @@
 .center{
     text-align: center;
 }
+.leftjust{
+    text-align: left;
+    padding-left: 40px;
+}
 .right{
     text-align: right;
 }

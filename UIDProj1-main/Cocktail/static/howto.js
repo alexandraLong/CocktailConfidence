@@ -4,7 +4,7 @@ $(document).ready(function(){
     $(".ingredients").empty()
     $(".ingredients").append("<div class='inglabel center tiny'>Check off the ingredient you learn as you watch the video!</div>")
     $.each(drink["ingredients"], function(index,value){
-        let item = $("<div class='inglabel ingpad center' ><input type='checkbox' id="+index+" class='check' value="+value+"<label for="+index+">&nbsp;"+value+"</label> </div>")
+        let item = $("<div class='inglabel ingpad leftjust' ><input type='checkbox' id="+index+" class='check' value="+value+"<label for="+index+">&nbsp;"+value+"</label> </div>")
         $(".ingredients").append(item)
         $("#"+index).change(function(){
             if ($("#"+index+':checked').length == $("#"+index).length) {
