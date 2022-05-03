@@ -42,9 +42,9 @@ quizzes = {
         "id": "2",
         "title": "Gin and Tonic Quiz",
         "questions": ["Which of the following ingredients can be found in a Gin and Tonic?","How much tonic water is in one Gin and Tonic?"],
-        "options": [["Tonic", "Tequila", "Gin", "Orange Juice", "Lime"], ["1/4 Cup","4 ounces", "3/4 Cup", "1 Cup","None"]],
+        "options": [["Tonic", "Tequila", "Gin", "Orange Juice", "Lime"], ["1/4 Cup","1/2 Cup", "3/4 Cup", "1 Cup","None"]],
         "values": [[True,False, True, False, True], [False, True, False, False, False]],
-        "messages": ["Except for Tequila and Orange Juice, all of the above ingredients are in a Gin and Tonic", "There are 4 ounces of tonic in a Gin and Tonic"]
+        "messages": ["Except for Tequila and Orange Juice, all of the above ingredients are in a Gin and Tonic", "There is a 1/2 cup of tonic in a Gin and Tonic"]
     },
     "3" : {
         "id": "3",
@@ -55,7 +55,7 @@ quizzes = {
         "messages": ["Of these ingredients, tequila, triple sec, and lime are the ones in a Margarita", "There is 1 ounce of triple sec in a Margarita"]
     }
 }
-
+n = 0
 
 @app.route('/')
 def homepage():
@@ -72,18 +72,23 @@ def cocktailgame(drinkname):
     global drinks
     drink = drinks[drinkname]
     return render_template('cocktailgame.html', drink = drink)
+
 @app.route('/quiz/<id>/<qno>')
 def quiz(id, qno):
     global quizzes
+    global n
     current_quiz = quizzes[id]
-    return render_template('quiz.html', quiz = current_quiz, qno = qno)
+    return render_template('quiz.html', quiz = current_quiz, qno = qno, n = n)
 
 @app.route('/quizzes')
 def display():
+    global n 
+    n = 0
     return render_template('quiz_landing.html')
 
 @app.route('/quiz/<id>/check_answer', methods=['POST'])
 def check_answer(id):
+    global n
     json_data = request.get_json()
     qno = int(json_data["qno"])-1
     quiz = json_data["quiz"]
@@ -101,9 +106,9 @@ def check_answer(id):
 
     for i in range(1,6):
         if json_data[str(i)] != answers[i-1]:
-            return jsonify(correct = False, message = quiz["messages"][qno])
-    
-    return jsonify(correct = True, message = quiz["messages"][qno])
+            return jsonify(correct = False, message = quiz["messages"][qno], n = n)
+    n += 1
+    return jsonify(correct = True, message = quiz["messages"][qno], n = n)
         
 
 # ajax for people.js
